@@ -208,7 +208,7 @@ void start_timing_work(){
 
 void end_timing_work(){
     if(currently_working){
-        total_working_ms = total_working_ms + (current_break_ms_start + millis());
+        total_working_ms = total_working_ms + (millis() - current_working_ms_start);
         tft.setTextColor(TFT_GREEN, TFT_BLACK);
         default_display_banner_text = "    Work End      ";
         currently_working = false;
